@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.6/main.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.6/main.min.css">
+</head>
+</head>
+<body>
+  <div id="calendar"><style>
+    #calendar {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  </style></div>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.6/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.6/main.min.js"></script>
+  <script src="/scripts/calendar.js"></script>
+  
+  <form id="habit-form" action="/set-habit" method="POST">
+    <label for="habit">Habit:</label>
+    <input type="text" id="habit" name="habit" required>
+    <label for="time">Reminder Time:</label>
+    <input type="time" id="time" name="time" required>
+    <button type="submit">Set Reminder</button>
+  </form> 
+
+  <form id="feedback-form" action="/feedback" method="POST" style="display:none;">
+    <input type="hidden" id="habitId" name="habitId">
+    <label for="feedback">Feedback:</label>
+    <input type="text" id="feedback" name="feedback" required>
+    <button type="submit">Submit Feedback</button>
+  </form>
+  
+  <script src="/scripts/script.js"></script>
+  
+</body>
+</html>
+
+
